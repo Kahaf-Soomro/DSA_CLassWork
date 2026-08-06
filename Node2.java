@@ -32,4 +32,153 @@ public class Node2 {
         return n;
 
     }
-}
+
+
+    Node2 deleteFromUnSorted(Node2 start, int x)
+    {
+        if(start == null) return start;
+        if(start.x ==x )
+            {
+                return start.next;}
+
+       for(Node2 p = start; p.next!=null; p = p.next)
+       {
+
+        // following loop is for ascending ordered list
+//             if(p.next.x > x){
+// break;
+//             }
+            if(p.next.x == x){
+                p.next = p.next.next;
+                break;
+                
+            }
+        }
+       return start;
+    }
+
+  Node2 deleteFromSortedAscending(Node2 start, int x)
+    {
+        if(start == null) return start;
+        if(start.x ==x )
+            {
+                return start.next;}
+
+       for(Node2 p = start; p.next!=null; p = p.next)
+       {
+
+            if(p.next.x > x){
+break;
+            }
+            if(p.next.x == x){
+                p.next = p.next.next;
+                break;
+                
+            }
+       }
+       return start;
+    }
+  Node2 deleteFromSortedDescending(Node2 start, int x)
+    {
+        if(start == null) return start;
+        if(start.x ==x )
+            {
+                return start.next;}
+
+       for(Node2 p = start; p.next!=null; p = p.next)
+       {
+
+            if(p.next.x < x){
+break;
+            }
+            if(p.next.x == x){
+                p.next = p.next.next;
+                break;
+                
+            }
+       }
+       return start;
+    }
+
+
+
+
+// replace
+ Node2 ReplaceNodeFromUnSorted(Node2 start,int x, int y)
+    {
+        if(start == null) return start;
+        if(start.x ==x )
+            {
+                start.x = y;
+                return start.next;}
+
+       for(Node2 p = start; p.next!=null; p = p.next)
+       {
+
+        // following loop is for ascending ordered list
+//             if(p.next.x > x){
+// break;
+//             }
+            if(p.next.x == x){
+                p.next.x = y;
+
+                p.next = p.next.next;
+                break;
+                
+            }
+        }
+       return start;
+    }
+
+  Node2 ReplaceFromSortedAscending(Node2 start, int x, int y)
+    {
+        if(start == null) return start;
+        if(start.x ==x )
+            {
+                start.x =y;
+
+                return start.next;}
+
+       for(Node2 p = start; p.next!=null; p = p.next)
+       {
+
+            if(p.next.x > x){
+break;
+            }
+            if(p.next.x == x){
+                p.next.x = y;
+
+                p.next = p.next.next;
+                break;
+                
+            }
+       }
+       return start;
+    }
+  Node2 ReplaceFromSortedDescending(Node2 start, int x , int y)
+    {
+        if(start == null) return start;
+        if(start.x ==x )
+            {
+                start.x = x;
+
+                return start.next;}
+
+       for(Node2 p = start; p.next!=null; p = p.next)
+       {
+
+            if(p.next.x < x){
+break;
+            }
+            if(p.next.x == x){
+                p.next.x = y;
+                
+                p.next = p.next.next;
+                break;
+                
+            }
+       }
+       return start;
+    }
+
+    }

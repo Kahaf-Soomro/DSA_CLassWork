@@ -137,7 +137,7 @@ break;
             {
                 start.x =y;
 
-                return start.next;}
+                return start;}
 
        for(Node2 p = start; p.next!=null; p = p.next)
        {
@@ -148,7 +148,7 @@ break;
             if(p.next.x == x){
                 p.next.x = y;
 
-                p.next = p.next.next;
+                p.next = p.next;
                 break;
                 
             }
@@ -172,7 +172,7 @@ break;
             }
             if(p.next.x == x){
                 p.next.x = y;
-                
+
                 p.next = p.next.next;
                 break;
                 

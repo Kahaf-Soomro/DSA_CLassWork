@@ -2,7 +2,7 @@ package STACK;
 
 import org.w3c.dom.Node;
 
-public class ArrayStack   {
+public class ArrayStack implements ImplementationOfStack  {
     private int size;
     private Object[] a;
     public ArrayStack(int capacity) {

@@ -1,7 +1,7 @@
 package STACK;
 
 
-public class LinkedStack {
+public class LinkedStack implements ImplementationOfStack {
     private int size;
     private Node top;
     private class Node {
@@ -75,7 +75,7 @@ public class LinkedStack {
 
         while (tempTop!= null){
             result.append(tempTop.data + " ");
-            
+
         
             tempTop = top.next;
 

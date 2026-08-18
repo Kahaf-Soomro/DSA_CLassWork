@@ -69,16 +69,18 @@ public class LinkedStack {
    
 
     public String toString(){
-        String result = "";
+        StringBuffer result = new StringBuffer();
         Node tempTop = top;
 
 
         while (tempTop!= null){
-            result += tempTop.data + " ";
+            result.append(tempTop.data + " ");
+            
+        
             tempTop = top.next;
 
         }
-        return result;
+        return result.toString();
 
     }
     public void mergeStack(LinkedStack stack1, LinkedStack Stack2){

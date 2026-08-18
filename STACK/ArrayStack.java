@@ -1,4 +1,7 @@
 package STACK;
+
+import org.w3c.dom.Node;
+
 public class ArrayStack   {
     private int size;
     private Object[] a;
@@ -37,6 +40,23 @@ public class ArrayStack   {
         a[size - 1] = null;
         size--;
         return ob;
+    }
+    
+
+    public String toString(){
+        StringBuffer result = new StringBuffer();
+        Object tempTop = a[--size];
+
+
+        while (tempTop!= null){
+            result.append(tempTop + " ");
+            
+        
+            tempTop = a[--size];
+
+        }
+        return result.toString();
+
     }
      
 

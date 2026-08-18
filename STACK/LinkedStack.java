@@ -38,11 +38,73 @@ public class LinkedStack {
         size--;
        return ob;
     }
-    
+   
+    public ArrayStack toArrayStack(){
 
-    // public StringBuffer toString(){
+        ArrayStack as = new ArrayStack(size);
+        Object[] tempArr = new Object[size];
+        int j = this.size-1;
+
+        while(j>=0){
+             
+            tempArr[j] = this.pop();
+            j--;
+
+        }
+        j= 0;
+        while(j<=size-1){
+
+            as.push(tempArr[j]);
+            
+            j++;
+        }
+        return as;
+
+        }
+       
         
-    //     return ;
 
-    // }
+    
+    
+   
+
+    public String toString(){
+        String result = "";
+        Node tempTop = top;
+
+
+        while (tempTop!= null){
+            result += tempTop.data + " ";
+            tempTop = top.next;
+
+        }
+        return result;
+
+    }
+    public void mergeStack(LinkedStack stack1, LinkedStack Stack2){
+
+        Object[] tempStack = new Object[stack1.size];
+
+        Node tempTop = stack1.top;
+
+int i = stack1.size-1;
+
+        while (tempTop!= null && i>=0){
+           
+            tempStack[i] = tempTop.data;
+
+            tempTop = tempTop.next;
+            i--;
+
+        }
+        i = tempStack.length-1;
+         
+        while(i>=0){
+            Stack2.push(tempStack[i]);
+            i--;
+
+        }
+
+    }
+
 }

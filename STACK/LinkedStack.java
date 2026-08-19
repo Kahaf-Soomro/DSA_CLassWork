@@ -80,7 +80,49 @@ public class LinkedStack implements ImplementationOfStack {
             return true;
 
         }
-    
+
+        public Object[] SliceStack(LinkedStack ls, int halfRatio
+        ){
+
+            int half = ls.size/halfRatio;
+            LinkedStack topHalf = new LinkedStack();
+            topHalf.size = half;
+            for(int i = ls.size-1; i>=half; i--){
+                topHalf.push(ls.pop()); 
+
+            }
+
+
+            LinkedStack[] bothStacks = new LinkedStack[2];
+            bothStacks[0] = topHalf;
+            bothStacks[1] = ls;
+
+            return bothStacks;
+            
+
+            
+
+        }
+       public Object[] toNSlices(LinkedStack l){
+
+            int prevSize = l.size;
+            LinkedStack[] bothStacks = new LinkedStack[prevSize];
+         
+            for(int i = l.size-1; i>=0; i--){
+                    bothStacks[i] = new LinkedStack();
+                    bothStacks[i].push(l.pop());
+                    
+
+            }
+
+
+          
+            return bothStacks;
+            
+
+            
+
+        }
     
    
 

@@ -63,7 +63,23 @@ public class LinkedStack implements ImplementationOfStack {
         }
        
         
+        public boolean equals(LinkedStack ls){
 
+            if(this.size != ls.size) return false;
+
+            LinkedStack temp1 = this;
+            LinkedStack temp2 = ls;
+
+
+            for(int i= size-1; i >=0; i--){
+                if(temp1.pop() != temp2.pop()) return false;
+
+            }
+
+
+            return true;
+
+        }
     
     
    

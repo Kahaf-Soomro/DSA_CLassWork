@@ -61,11 +61,10 @@ public class LinkedQueue implements QueueInterface {
     @Override
     public void add(Object obj) {
 
-            Node lastElement = head.previous;
-lastElement.next = new Node(obj, lastElement, head);
+head.previous.next = new Node(obj, head.previous, head);
 
                 // head.previous.next = new Node( obj, head.previous, head);
-                lastElement =   lastElement.next ;
+                head.previous =   head.previous.next ;
                 ++size;
 
                 System.out.println("New Node Added");
@@ -84,11 +83,11 @@ lastElement.next = new Node(obj, lastElement, head);
 
         Object temp = head.next.data;
 
-        Node firstElement = head.next;
-            firstElement = firstElement.next;
-            firstElement.previous = head;
+     
+             head.next =  head.next.next;
+             head.next.previous = head;
             --size;
-            
+
 
         return temp;
 

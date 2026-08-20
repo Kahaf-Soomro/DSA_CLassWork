@@ -4,6 +4,15 @@ import java.util.Queue;
 
 public class LinkedQueue implements QueueInterface {
 
+
+    int size;
+    public class Node{
+        Object data;
+        Node next;
+        Node previous;
+        
+    }
+
     @Override
     public int size() {
         // TODO Auto-generated method stub

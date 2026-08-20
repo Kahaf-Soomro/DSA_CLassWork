@@ -111,7 +111,7 @@ public class LinkedStack implements ImplementationOfStack {
             for(int i = l.size-1; i>=0; i--){
                     bothStacks[i] = new LinkedStack();
                     bothStacks[i].push(l.pop());
-                    
+
 
             }
 

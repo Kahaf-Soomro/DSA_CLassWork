@@ -1,7 +1,5 @@
 package Queue;
 
-import java.util.Queue;
-
 public class LinkedQueue implements QueueInterface {
 
 
@@ -9,6 +7,9 @@ public class LinkedQueue implements QueueInterface {
 
     public LinkedQueue(){
         size = 0;
+    }
+     public LinkedQueue(int s){
+        size = s;
     }
 
     private static class Node{
@@ -57,7 +58,16 @@ public class LinkedQueue implements QueueInterface {
         return head.next.data;
         
     }
-
+ public Object last() {
+        
+        if(size ==0) try {
+            throw new Exception("Queue is empty lol");
+        } catch (Exception ex) {
+            System.getLogger(LinkedQueue.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+        return head.previous.data;
+        
+    }
     @Override
     public void add(Object obj) {
 
@@ -91,6 +101,27 @@ head.previous.next = new Node(obj, head.previous, head);
 
         return temp;
 
+        
+    }
+
+    public String toString(){
+        
+              if(size ==0) try {
+            throw new Exception("Queue is empty lol");
+        } catch (Exception ex) {
+            System.getLogger(LinkedQueue.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+        StringBuffer sb = new StringBuffer();
+
+        LinkedQueue tempQ = new LinkedQueue();
+        while(size!=0){
+
+            tempQ.add(tempQ.remove());
+            sb.append(tempQ.remove());
+            size--;
+
+        }
+        return sb.toString();
         
     }
     

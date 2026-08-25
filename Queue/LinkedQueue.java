@@ -43,7 +43,7 @@ public class LinkedQueue implements QueueInterface {
 
     @Override
     public int size() {
-        return 1;
+        return size;
 
     }
 
@@ -124,6 +124,45 @@ head.previous.next = new Node(obj, head.previous, head);
         return sb.toString();
         
     }
-    
+    @Override
+public boolean equals(Object obj) {
+    if (this == obj) {
+        return true;
+    }
 
+    if (obj == null) {
+        return false;
+    }
+
+    LinkedQueue other = (LinkedQueue) obj;
+
+    if (this.size != other.size) {
+        return false;
+    }
+
+    Node currentThis = this.head.next;
+    Node currentOther = other.head.next;
+
+    while (currentThis != this.head) {
+        Object d1 = currentThis.data;
+        Object d2 = currentOther.data;
+
+        if (d1 == null) {
+            if (d2 != null) {
+                return false;
+            }
+        } else if (!d1.equals(d2)) {
+            return false;
+        }
+
+        currentThis = currentThis.next;
+        currentOther = currentOther.next;
+    }
+
+    return true;
+}
+
+// public Object[] toArray(){
+
+// }
 }

@@ -1,7 +1,6 @@
 
 package Queue;
 
-
 public interface QueueInterface{
 
 public int size();

@@ -33,12 +33,24 @@ return Math.abs(key.hashCode())%entries.length;
         return entries[hash(key)].value;
     }
 
-    public Object put(Object key, Object val){
-        entries[hash(key)] = new Entry(key, val);
-        System.out.println("Entry put() in hashTable.");
-        ++size;
-        return null;
+    public Object put(Object key, Object val) throws Exception{
 
+            for(int i = 0;i<entries.length; i++){
+
+                
+                if(  entries[((hash(key)+i) % entries.length )] == null){
+                    entries[((hash(key)+i )% entries.length) ] = new Entry(key, val);
+                    System.out.println("Entry put() in hashTable.");
+                    ++size;
+            return null;
+
+
+                }
+            
+                
+                
+            } 
+            throw new Exception("Entries are full ");
     }
 
     public Object remove(Object key){

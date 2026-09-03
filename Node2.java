@@ -12,7 +12,6 @@ public class Node2 {
     }
     public static Node2 insert(Node2 n ,int x){
         if(n == null || n.x > x){
-
             n = new Node2(x, n);
             return n;
 

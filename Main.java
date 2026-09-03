@@ -14,7 +14,7 @@ start1 = Node2.insert(start1, 50);
 
 Node2 start2 = new Node2(5);
 
-
+  
 
 start2 = Node2.insert(start2, 15);
 start2 = Node2.insert(start2, 25);

@@ -14,7 +14,8 @@ public class Main {
         hm.put("N", new Country("Netherlands", "Dutch", 5700000));
 
 System.out.println(
-        hm.get("E")
+        hm.get("H") 
+        +"\n"+ hm.hash("H")
 
 );
     }

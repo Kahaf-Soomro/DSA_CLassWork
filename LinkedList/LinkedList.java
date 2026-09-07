@@ -277,9 +277,202 @@ break;
 return head;
 }
 
+//Merge Lists
+public Node mergeListsSorted(Node head1, Node head2){
 
+     if(head1 ==null){
+        return head2;
+    }
+if(head2 ==null){
+        return head1;
+    }
+    if(head1.size() < head2.size()){
+        Node c1 = head1;
+        Node c2 = head2;
+    for(c1 = head1; c1!=null; c1= c1.next){
+
+        //take head1 to traverse and insert
+        if((int) c2.value > (int) c1.value){
+          
+                c2.next = new Node(c1.value, c2.next);
+              
+
+        }else{
+            //skip the iteration
+        }
+    }
+
+    } else{
+        //take head2 to traverse and insert
+              Node c1 = head1;
+        Node c2 = head2;
+    for(c2 = head1; c2!=null; c2= c2.next){
+
+        //take head1 to traverse and insert
+        if((int) c1.value > (int) c2.value){
+          
+                c1.next = new Node(c2.value, c1.next);
+              
+
+        }else{
+            //skip the iteration
+        }
+    }
 
     }
+
+    return head1;
+}
+
+
+public Node mergeListsUnsorted_chatgptMethod(Node head1, Node head2){
+    if(head1 ==null){
+        return head2;
+    }
+if(head2 ==null){
+        return head1;
+    }
+    Node c1 = head1;
+    Node c2 = head2;
+    Node result     = null;
+    Node tail = null;
+    while(c1!=null && c2!=null){
+            if((int) c1.value < (int) c2.value){
+            if(result ==null){
+                result = c1;
+                tail  = c1;
+
+            }
+            else {
+               tail.next = c1;
+               tail = c1;
+
+                
+
+               
+            }
+            c1 = c1.next;
+
+        } else{
+              if(result ==null){
+                result = c2;
+                tail  = c2;
+
+            }
+            else {
+               tail.next = c2;
+               tail = c2;
+
+                
+
+        }
+            
+        }
+        c2 = c2.next;
+
+     }
+   
+  if(c1 != null)
+        tail.next = c1;
+
+    if(c2 != null)
+        tail.next = c2;
+
+    return result;
+}
+
+
+
+//reverse 
+
+public Node reverseWithArray(Node head){
+    if(head == null){
+        return null;
+
+}
+
+    if(head.next ==null){
+        return head;
+    }
+    
+    Object[] arr = new Object[head.size()];
+    int i = 0;
+    for(Node c= head; c!=null; c= c.next){
+        arr[i] = c.value;
+        ++i;
+    }
+
+    Node c = head;
+    --i;    
+    while(i>=0 && c!=null){
+            c.value = arr[i];
+            c = c.next;
+
+
+        i--;
+    }
+    return head;
+
+}
+
+//count occurences 
+ public int countFrequency(Node head, Object value){
+int count = 0;
+if(head == null) return 0;
+
+    Node counter = head;
+    for(counter = head; counter!=null; counter = counter.next){
+        if(counter.value.equals(value)){
+            count++;
+
+        }
+    }
+
+
+
+    return count;
+ }
+
+    public Node findMax(Node head){
+
+        if(head == null){
+
+            return null;
+        } 
+        
+            Node max = head;
+            for(Node current = head.next; current!= null; current = current.next){
+                if( (int) max.value < (int) current.value){
+                    max = current;
+                }
+            }
+            return max;
+
+    }
+     public Node findMin(Node head){
+
+        if(head == null){
+
+            return null;
+        } 
+        
+            Node min = head;
+            for(Node current = head.next; current!= null; current = current.next){
+                if( (int) min.value > (int) current.value){
+                    min = current;
+                  
+                }
+            }
+            return min;
+
+    }
+    
+
+
+  
+
+    }
+
 
     
 public class LinkedList {

@@ -38,7 +38,7 @@ public class LinkedStack implements ImplementationOfStack {
         size--;
        return ob;
     }
-   
+
     public ArrayStack toArrayStack(){
 
         ArrayStack as = new ArrayStack(size);

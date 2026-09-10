@@ -1,6 +1,6 @@
 package queuePratice_2;
 
-import STACK.LinkedStack;
+
 
 public class LinkedQueue {
     private int size = 0;
@@ -145,8 +145,18 @@ public class LinkedQueue {
                     }
 
 
-                    public LinkedStack toLinkedQueue(){
-                        
+                    public LinkedStack toStack(){
+
+                            if(this.size==0 )return null;
+                            int os = this.size();
+                            LinkedStack ls = new LinkedStack();
+                            Node temp = head.previous;
+                            for(int i = 0; i<os; i++){
+                                ls.push(temp.data);
+                                temp= temp.previous; 
+                            }
+                            return ls;
+
                         
                     }
     

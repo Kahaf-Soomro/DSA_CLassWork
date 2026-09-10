@@ -1,7 +1,5 @@
 package STACK;
 
-import org.w3c.dom.Node;
-
 public class ArrayStack implements ImplementationOfStack  {
     private int size;
     private Object[] a;
@@ -30,6 +28,7 @@ public class ArrayStack implements ImplementationOfStack  {
     private void resize() {
         Object[] old = a;
         a = new Object[2 * old.length];
+         
         System.arraycopy(old, 0, a, 0, size);
     }
     public Object pop() {

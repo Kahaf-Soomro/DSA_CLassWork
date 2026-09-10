@@ -43,6 +43,7 @@ public class LinkedStack implements ImplementationOfStack {
 
         ArrayStack as = new ArrayStack(size);
         Object[] tempArr = new Object[size];
+        int originalSize = this.size;
         int j = this.size-1;
 
         while(j>=0){
@@ -52,7 +53,7 @@ public class LinkedStack implements ImplementationOfStack {
 
         }
         j= 0;
-        while(j<=size-1){
+        while(j<=originalSize-1){
 
             as.push(tempArr[j]);
             

@@ -167,5 +167,37 @@ int i = stack1.size-1;
         }
 
     }
+    // public Object deleteThirdBottom(){
 
+    //     if(size<    3) return null;
+    //     int oS = size;
+    //     Node tempTop = top;
+    //     int i = size;
+    //         while( i> size-4){
+                
+    //             tempTop = tempTop.next;
+            
+    //             i--;
+    //         }
+    //         Object found =   tempTop.data;
+    //         tempTop.next= tempTop.next.next  ;
+    //         size--;
+    //         return found;
+    // }
+
+        public Object deleteThirdBottom(){
+
+        if(size<    3) return null;
+       
+        Node tempTop = top;
+       for(int i = 0; i<size-4; i++) {
+                tempTop = tempTop.next;
+            
+                
+            }
+            Object found =   tempTop.next.data;
+            tempTop.next= tempTop.next.next  ;
+            size--;
+            return found;
+    }
 }

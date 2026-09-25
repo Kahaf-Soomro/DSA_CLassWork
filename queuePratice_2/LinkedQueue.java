@@ -32,6 +32,8 @@ public class LinkedQueue {
 
             head.previous.next = new Node(obj);
             head.previous = head.previous.next;
+                head.previous.next = head;
+
             size++;
 
             //or just head.previous.next = new Node(obj, head.previous, head)

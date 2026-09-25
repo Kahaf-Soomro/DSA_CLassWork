@@ -1,8 +1,5 @@
 package queuePratice_2;
 
-import com.sun.jdi.connect.Connector;
-import java.util.LinkedList;
-
 public class LinkedStack     {
     private int size;
     private Node top;
@@ -106,14 +103,18 @@ public class LinkedStack     {
             
 
         }
-       public Object[] toNSlices(LinkedStack l){
+       public Object[] toNSlices(){
 
-            int prevSize = l.size;
+            int prevSize = this.size;
             LinkedStack[] bothStacks = new LinkedStack[prevSize];
          
-            for(int i = l.size-1; i>=0; i--){
-                    bothStacks[i] = new LinkedStack();
-                    bothStacks[i].push(l.pop());
+            for(int i = size-1; i>=0; i--){
+                Object temp = this.pop();
+                int j =0;
+                if(i==0 || i==4 || i==8){
+                    bothStacks[j] = new LinkedStack();
+                    bothStacks[j].push(temp);
+                    j++;
 
 
             }
